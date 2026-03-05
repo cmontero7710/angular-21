@@ -1,0 +1,27 @@
+<div class="container mt-5 pt-5">
+  <h2>Listado de Planes Alimenticios</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Edad</th>
+        <th>Género</th>
+        <th>Tipo Diabetes</th>
+        <th>Peso</th>
+        <th>Plan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of (dietas$ | async)?.content">
+        <td>{{ d.nombre }}</td>
+        <td>{{ d.telefono_celular }}</td>
+        <td>{{ d.edad }}</td>
+        <td>{{ d.genero }}</td>
+        <td>{{ d.tipo_diabetes }}</td>
+        <td>{{ d.peso }}</td>
+        <td>{{ d.plan_alimentos }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,62 @@
+<div class="container mt-5 pt-5">
+  <h2>Alta de Dieta</h2>
+
+  <!-- Datos iniciales -->
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="celular" class="form-label">Número de Celular</label>
+    <input type="text" id="celular" [(ngModel)]="celular" name="celular" class="form-control" required>
+  </div>
+
+  <button class="btn btn-primary" (click)="guardarContacto()">Guardar Contacto</button>
+
+  <!-- Combos y datos adicionales -->
+  <div *ngIf="idContacto" class="mt-4">
+    <h4>Datos adicionales</h4>
+
+    <div class="mb-3">
+      <label for="genero" class="form-label">Género</label>
+      <select id="genero" [(ngModel)]="generoSeleccionado" name="genero" class="form-select">
+        <option *ngFor="let g of generos" [value]="g.id">{{ g.valor }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="edad" class="form-label">Edad</label>
+      <select id="edad" [(ngModel)]="edadSeleccionada" name="edad" class="form-select">
+        <option *ngFor="let e of edades" [value]="e.id">{{ e.valor }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="diabetes" class="form-label">Tipo de Diabetes</label>
+      <select id="diabetes" [(ngModel)]="diabetesSeleccionada" name="diabetes" class="form-select">
+        <option *ngFor="let d of tiposDiabetes" [value]="d.id">{{ d.valor }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="ejercicio" class="form-label">Tipo de Ejercicio</label>
+      <select id="ejercicio" [(ngModel)]="ejercicioSeleccionado" name="ejercicio" class="form-select">
+        <option *ngFor="let ex of tiposEjercicio" [value]="ex.id">{{ ex.valor }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="estatura" class="form-label">Estatura</label>
+      <input type="number" id="estatura" [(ngModel)]="estaturaSeleccionada" name="estatura"
+         class="form-control" step="1" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="peso" class="form-label">Peso</label>
+      <input type="number" id="peso" [(ngModel)]="pesoSeleccionado" name="peso" class="form-control">
+    </div>
+
+    <button class="btn btn-success" (click)="guardarSuscriptor()">Guardar Suscriptor</button>
+  </div>
+</div>
